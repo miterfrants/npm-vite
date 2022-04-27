@@ -1,12 +1,34 @@
 'use strict';
 
+var index = require('./dep-d78ed8ca.js');
 var require$$1 = require('crypto');
+require('fs');
+require('path');
+require('tty');
+require('util');
+require('net');
+require('events');
+require('url');
+require('http');
+require('stream');
+require('os');
+require('resolve');
+require('module');
+require('perf_hooks');
+require('https');
+require('zlib');
+require('tls');
+require('assert');
+require('esbuild');
+require('buffer');
+require('querystring');
+require('child_process');
+require('worker_threads');
+require('readline');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e["default"] : e; }
 
 var require$$1__default = /*#__PURE__*/_interopDefaultLegacy(require$$1);
-
-var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
 /**
  * Node.js module for Forge.
@@ -331,7 +353,7 @@ util$1.isNodejs =
 // is not available.
 util$1.globalScope = (function() {
   if(util$1.isNodejs) {
-    return commonjsGlobal;
+    return index.commonjsGlobal;
   }
 
   return typeof self === 'undefined' ? window : self;
@@ -19576,4 +19598,3 @@ function createCertificate() {
 }
 
 exports.createCertificate = createCertificate;
-//# sourceMappingURL=dep-e6e312c2.js.map

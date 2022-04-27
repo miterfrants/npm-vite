@@ -1208,9 +1208,12 @@ function loadPreprocessor(lang: PreprocessLang, root: string): any {
     // Search for the preprocessor in the root directory first, and fall back
     // to the default require paths.
     const fallbackPaths = require.resolve.paths?.(lang) || []
-    const resolved = require.resolve(lang === 'sass' ? 'node-sass' : lang, {
-      paths: [root, ...fallbackPaths]
-    })
+    const resolved = require.resolve(
+      ['sass', 'scss'].includes(lang) ? 'node-sass' : lang,
+      {
+        paths: [root, ...fallbackPaths]
+      }
+    )
     return (loadedPreprocessors[lang] = require(resolved))
   } catch (e) {
     if (e.code === 'MODULE_NOT_FOUND') {
